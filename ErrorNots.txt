@@ -2,6 +2,18 @@ The error you're encountering is because the useHistory hook has been deprecated
 
 Great question! The reason we use [event.target.name] in square brackets is because it's a way to dynamically set the property name in an object.
 
+If you have a local project that you want to connect to this new GitHub repository, you need to initialize Git in your project folder:git init
+Add the remote repository URL to your local repository:git remote add origin https://github.com/username/repositoryname.git
 Add your files to the staging area: git add .
 Commit the changes:git commit -m "Initial commit"
 Push your changes to the remote repository:git push -u origin master
+
+-----------------------------------------------------------------------------
+
+GetDoctorListApiCall.json is not a function TypeError: GetDoctorListApiCall.json is not a function at fetchData (http://localhost:3000/static/js/bundle.js:909:47)
+
+The error occurs because axios returns a Promise that resolves to the response object, which contains the HTTP response data and other details, but it does not have a json() method like the fetch API does. Instead, axios processes JSON responses automatically and provides the data as a JavaScript object.
+
+You should use the .data property of the response object to get the data directly. Here’s how you can modify your code:
+
+--------------------------------------------------------------------------------

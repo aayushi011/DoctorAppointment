@@ -1,9 +1,15 @@
 import Doctor from "./Doctor"
+import GetDoctorList from "./GetDoctorList";
 
 const Home = ()=> {
     return(
         <div>
-            <Doctor/>
+            <div>
+                <Doctor/>
+            </div>
+            <div>
+                <GetDoctorList/>
+            </div>
         </div>
     )
 }
