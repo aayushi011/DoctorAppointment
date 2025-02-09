@@ -1,3 +1,7 @@
 The error you're encountering is because the useHistory hook has been deprecated in react-router-dom v6 and replaced with the useNavigate hook. Let's update your code to use useNavigate instead.
 
 Great question! The reason we use [event.target.name] in square brackets is because it's a way to dynamically set the property name in an object.
+
+Add your files to the staging area: git add .
+Commit the changes:git commit -m "Initial commit"
+Push your changes to the remote repository:git push -u origin master
