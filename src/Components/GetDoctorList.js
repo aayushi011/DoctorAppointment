@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button, Card } from 'react-bootstrap';
+import ApointBook from "./ApointBook.js";
 
 const GetDoctorList = () =>{
 
     const [GetDoctorData,setGetDoctorData] = useState([]);
+    const [show,setShow] = useState(false);
 
     useEffect(()=>{
         async function fetchData(){
@@ -21,6 +23,15 @@ const GetDoctorList = () =>{
             setGetDoctorData(Data.data);
         })
     },[])
+
+    const handleBookAppointment = () =>{
+        console.log("Book Appointment is clicked");
+        setShow(true);
+    }
+
+    const handleModalClose = () =>{
+        setShow(false);
+    }
 
    return(
     <div>
@@ -45,13 +56,14 @@ const GetDoctorList = () =>{
                                        </div>
                                 </small>
                                 <hr></hr>
-                                <Button>Book Appointment</Button>
+                                <Button onClick={handleBookAppointment}>Book Appointment</Button>
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 )
             })
         }
+        <ApointBook show={show} handleModalClose = {handleModalClose}/>
     </div>
    )
 }
